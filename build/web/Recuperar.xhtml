@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./Plantilla/Login.xhtml">
+
+            <ui:define name="content">
+                <h:form id="RecuperarContraseña">
+                    <p:panel>
+                        <div align="center">
+                            <h2 style="color:limegreen;"> ¿Porqué no puedes Iniciar Sesión?</h2>
+                            <br/>
+                                <h:link value="He olvidado mi contraseña" outcome="NuevaClave" style="font-size: medium ;font-weight: 500" /><br/>
+                                <h:link value="He olvidado mi usuario y contraseña" outcome="RecuperarCuenta" style="font-size: larger;font-weight: 500" />
+                            </div>
+                            <br/>
+                    </p:panel>
+                </h:form> 
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

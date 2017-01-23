@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./Plantilla/Login.xhtml">
+
+            <ui:define name="content">
+                <h:form id="Login"> <br/>
+                    <div align="center">
+                    <h:panelGrid columns="2">
+                        <p:row>
+                            <p:column>
+                                <div align="right">
+                                    <p:graphicImage value="/resources/imagenes/login.png" />
+                                </div>
+                            </p:column>
+                        </p:row>  
+                        <h:column>
+                            <p:messages globalOnly="true" closable="true"/>
+                            <p:panel id="pnllogin">                        
+                                <div align="center">
+                                    <p:outputLabel style="font-weight: 700; font-size: small" > <br/>
+                                        Para ingresar al sistema ingrese su USUARIO y CONTRASEÑA.
+                                        <h:column>
+                                            <h:panelGrid columns="1" ><br/>
+                                                <p:outputLabel for="txtUsuario" value="Usuario: "  style="font-size: small;font-weight: 500"/>
+                                                <p:inputText id="txtUsuario" value="#{cLogin.usuario}" required="true" requiredMessage="Ingrese su Usuario" 
+                                                             style="width: 150px; font-size: small;"/>
+                                                <p:outputLabel for="txtClave" value="Clave: " style=" font-size: small; font-weight: 500"/>
+                                                <p:password id="txtClave" value="#{cLogin.contrasenia}" required="true"       
+                                                            label="password"  style="width: 150px; font-size: small" requiredMessage="Ingrese su Contraseña"/>                                                
+                                                <h:commandButton  actionListener="#{cLogin.doLogin}" value="Iniciar Sesión"  
+                                                                  style=" font-size: small; font-weight: 700"/><br/>
+                                            </h:panelGrid>
+                                        </h:column>  
+                                    </p:outputLabel> 
+                                </div> 
+                                <div align="right">
+                                    <h:link value="¿Necesitas Ayuda?" outcome="Recuperar" style="font-size: small;font-weight: 500"/>
+                                </div>
+                            </p:panel>
+                        </h:column>
+                    </h:panelGrid>
+                    </div>
+                </h:form>    
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
